@@ -11,7 +11,7 @@ public class Main{
             String[] link_split=aux.split("/");
             for(int i=0;i<link_split.length;i++)
             {
-                System.out.print(link_split[i]+"->");
+                System.out.print(link_split[i]);
             }
             System.out.println(" ");
 
