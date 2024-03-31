@@ -29,15 +29,21 @@ public class Main{
            {
             String aux=get_furniture.nextLine();
             String[] link_split=aux.split("/");
-            if(check_URL(aux,link_split)==false)
-            System.err.println(aux);
+            if(check_URL(aux,link_split)==true)
+            {
+                Furniture_item new_item=new Furniture_item();
+                if( new_item.set_Item(link_split))
+                {
+                    System.out.println(new_item.get_Item_name());
+                }
+                
+            }
             
 
            }
         get_furniture.close();
         }catch(IOException e){
             System.out.println("ERROR at input");
-
         }
 
         
