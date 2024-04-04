@@ -1,6 +1,11 @@
+
+import java.util.*;
+
+
 class Furniture_item
 {
     String Item_name;
+    List<String> Source_site=new ArrayList<String>();
     int nr_of_searches;
 
     Furniture_item(){ Item_name="-NO_INPUT-"; nr_of_searches=0;}
@@ -16,6 +21,7 @@ class Furniture_item
         }
         if(i<URL.length-1)
         {
+            Source_site.add(URL[2]);
             Item_name=URL[i+1];
             nr_of_searches++;
             return true;
@@ -27,4 +33,37 @@ class Furniture_item
     {
         return Item_name;
     }
+
+    public String get_first_Site()
+    {
+            return Source_site.getFirst();
+    }
+    public void new_search(final Furniture_item F)
+    {
+       Source_site.add(F.get_first_Site());
+       nr_of_searches++;
+    }
+
+    public void console_display()
+    {
+        System.out.println("----------------Furniture_Item----------------------");
+        System.out.println("Item name: "+Item_name);
+        System.out.println("Was found on:");
+        Source_site.forEach(System.out::println);
+        System.out.println("Was searched "+nr_of_searches+" time(s)");
+        System.out.println("----------------------------------------------------");
+    }
+
+    @Override
+    public String toString()
+    {
+        String out="----------------Furniture_Item----------------------\n";
+        out=out+"Item name: "+Item_name+"\n";
+        return out;
+
+    }
+   
+
+    
+
 }
