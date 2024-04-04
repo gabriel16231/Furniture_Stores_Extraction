@@ -38,6 +38,11 @@ class Furniture_item
     {
             return Source_site.getFirst();
     }
+
+    public int get_nr_of_searches()
+    {
+        return nr_of_searches;
+    }
     public void new_search(final Furniture_item F)
     {
        this.Source_site.add(F.get_first_Site());
