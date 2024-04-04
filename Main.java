@@ -44,8 +44,10 @@ public class Main{
                 {
                    if(Furniture.containsKey(new_item.get_Item_name()))
                    {
+                    
                     Furniture.get(new_item.get_Item_name()).new_search(new_item);
-                    new_item.console_display();
+                    Furniture_item aux_f=Furniture.get(new_item.get_Item_name());
+                    aux_f.console_display();
                    }
                    else
                     {
@@ -62,6 +64,8 @@ public class Main{
         }catch(IOException e){
             System.out.println("ERROR at input");
         }
+
+        
 
         
 

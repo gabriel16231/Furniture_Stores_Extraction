@@ -23,7 +23,7 @@ class Furniture_item
         {
             Source_site.add(URL[2]);
             Item_name=URL[i+1];
-            nr_of_searches++;
+            nr_of_searches=1;
             return true;
         }
         return false;
@@ -40,8 +40,8 @@ class Furniture_item
     }
     public void new_search(final Furniture_item F)
     {
-       Source_site.add(F.get_first_Site());
-       nr_of_searches++;
+       this.Source_site.add(F.get_first_Site());
+       this.nr_of_searches++;
     }
 
     public void console_display()
