@@ -103,10 +103,18 @@ class Furniture_Data {
     public void get_Data()
     {
             File file_get=new File("Furniture_Data.txt");
-            for(Map.Entry<String,Furniture_item> entry: Furniture.entrySet())
-            {
-            entry.getValue().get_Item(file_get);
-            }
+            try{
+                Scanner input=new Scanner(file_get);
+                while(input.hasNextLine())
+                {
+                    Furniture_item aux=new Furniture_item();
+                    aux.get_Item(input);
+                    Furniture.put(aux.get_Item_name(), aux);
+                }
+                input.close();
+            }catch(IOException e)
+            {System.err.println("Error at getting data");}
+
 
         
 

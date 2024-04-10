@@ -20,6 +20,7 @@ public class Main{
         }
         Data.store_Data();
         Data.console_display_Furniture();
-        Data.store_Data();
+        Data.get_Data();
+        Data.console_display_Furniture();
     }
 }

@@ -76,17 +76,13 @@ class Furniture_item {
         }
     }
 
-    public void get_Item(File input) {
-        try {
-            Scanner get_item = new Scanner(input);
+    public void get_Item(Scanner get_item) {
             Item_name = get_item.nextLine();
             nr_of_searches = Integer.valueOf(get_item.nextLine());
             for (int i = 0; i < nr_of_searches; i++)
                 Source_site.add(get_item.nextLine());
             get_item.close();
-        } catch (IOException e) {
-            System.err.println("Error at getting data from file: " + input.getName());
-        }
+        
     }
 
 }
