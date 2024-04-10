@@ -100,6 +100,18 @@ class Furniture_Data {
 
     }
 
+    public void get_Data()
+    {
+            File file_get=new File("Furniture_Data.txt");
+            for(Map.Entry<String,Furniture_item> entry: Furniture.entrySet())
+            {
+            entry.getValue().get_Item(file_get);
+            }
+
+        
+
+    }
+
 
 
     
