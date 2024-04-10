@@ -66,5 +66,41 @@ class Furniture_Data {
             }
         }
     }
+
+    void add_to_file(FileWriter output)
+    {
+        for(Map.Entry<String,Furniture_item> entry: Furniture.entrySet())
+        {
+            entry.getValue().store_Item(output);
+        }
+    }
+    public void store_Data()
+    {
+        try{
+            File file_store=new File("Furniture_Data.txt");
+            if(file_store.createNewFile())
+            {
+                System.out.println(file_store.getName()+"was created successfuly");
+            }
+            else
+            {
+                System.err.println("File already exists!");
+            }
+
+            FileWriter file_store_write =new FileWriter("Furniture_Data.txt");
+            add_to_file(file_store_write);
+            file_store_write.close();
+
+        }catch(IOException e)
+        {
+            System.err.println("Error at creating and/or storing in file");
+        }
+
+        
+
+    }
+
+
+
     
 }

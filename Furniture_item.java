@@ -1,4 +1,6 @@
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -59,13 +61,20 @@ class Furniture_item
         System.out.println("----------------------------------------------------");
     }
 
-    @Override
-    public String toString()
+    public void store_Item(FileWriter output)
     {
-        String out="----------------Furniture_Item----------------------\n";
-        out=out+"Item name: "+Item_name+"\n";
-        return out;
-
+        try 
+        {
+            output.write(Item_name+"\n");
+            output.write(nr_of_searches+"\n");
+            for(int i=0;i<Source_site.size();i++)
+            {   
+                output.write(Source_site.get(i)+"\n");
+            }
+        }catch(IOException e)
+        {
+            System.err.println("Error at storing item");
+        }
     }
    
 

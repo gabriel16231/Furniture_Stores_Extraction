@@ -16,8 +16,10 @@ public class Main{
            }
         get_furniture.close();
         }catch(IOException e){
-            System.out.println("ERROR at input");
+            System.err.println("ERROR at input");
         }
+        Data.store_Data();
         Data.console_display_Furniture();
+        Data.store_Data();
     }
 }
