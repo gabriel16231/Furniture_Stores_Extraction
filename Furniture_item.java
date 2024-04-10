@@ -21,10 +21,12 @@ class Furniture_item
         {
             i++;
         }
-        if(i<URL.length-1)
+        while(i<URL.length&& (URL[i].equals("page")|| URL[i].equals("gift-card")||URL[i].equals("products")))
+        i++;
+        if(i<URL.length)
         {
             Source_site.add(URL[2]);
-            Item_name=URL[i+1];
+            Item_name=URL[i];
             nr_of_searches=1;
             return true;
         }
